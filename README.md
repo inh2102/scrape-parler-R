@@ -1,7 +1,7 @@
 # scrape_parler
-Scrape the conservative alternative social media network "Parler."
+This repository scrapes the conservative alternative social media network "Parler."
 
-This repository provides R functions that save the "Parleys" section of Parler's "Discover" page.
+Currently, `scrape_parler.R` allows you to save the "Parleys" section of Parler's "Discover" page.
 
 To clone this repository, use:
 
