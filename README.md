@@ -27,7 +27,7 @@ If you'd like to kill all running instances of Docker, use:
 
 ## Scraping Parler
 
-Once you have cloned this repository, open the `scrape_parler.R` file (which handles references to the `functions.R` file, which is the meat of this repo). 
+Once you have cloned this repository, open the `scrape_parler.R` file (which handles references to the `functions.R` file - the meat of this repo). 
 
 The `packages()` call will ensure you have installed the three R packages this script uses (RSelenium, rvest, tidyverse). 
 
