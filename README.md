@@ -13,7 +13,7 @@ To clone this repository, use:
 
 ## Using Selenium
 
-This script relies on the usage of Selenium remote webdrivers. `scrape_parler` uses the `RSelenium` package, and it's easiest to use [Docker](https://www.docker.com/get-started) to handle remote drives on your machine. Be sure to follow all of the installation instructions, and after you have opened the application, type the following into Terminal/Command Line:
+This script relies on the usage of Selenium remote webdrivers. `scrape_parler.R` uses the `RSelenium` package, and it's easiest to use [Docker](https://www.docker.com/get-started) to handle remote drives on your machine. Be sure to follow all of the installation instructions, and after you have opened the application, type the following into Terminal/Command Line:
 
 `docker pull selenium/standalone-firefox`.
 
