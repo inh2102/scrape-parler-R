@@ -1,7 +1,3 @@
-library(RSelenium)
-library(rvest)
-library(tidyverse)
-
 scrape_parler <- function(scrolls=10) {
 
 # SETUP
@@ -31,6 +27,9 @@ Sys.sleep(3)
 nextButton <- remDr$findElement(using = "xpath", value = '//*[contains(concat( " ", @class, " " ), concat( " ", "w--100", " " ))]')
 nextButton$clickElement()
 Sys.sleep(3)
+if (!is.null(remDr$findElement(using='id',value='mat-error-0'))) {
+  stop("Incorrect credentials, please start over...")
+}
 captcha <- remDr$findElement(using = "id", value = "mat-input-2")
 Sys.sleep(2)
 remDr$screenshot(TRUE)
@@ -41,6 +40,9 @@ captcha$sendKeysToElement(list(code))
 clickNext <- remDr$findElement(using = "xpath", value ='//*[(@id = "auth-form--actions")]//*[contains(concat( " ", @class, " " ), concat( " ", "w--100", " " ))]')
 clickNext$clickElement()
 Sys.sleep(2)
+if (!is.null(remDr$findElement(using='id',value='mat-error-1'))) {
+  stop("Incorrect CAPTCHA, please start over...")
+}
 
 # TEXT CODE
 
@@ -53,6 +55,9 @@ remDr$sendKeysToActiveElement(list(text[4]))
 remDr$sendKeysToActiveElement(list(text[5]))
 remDr$sendKeysToActiveElement(list(text[6]))
 Sys.sleep(2)
+if (!is.null(remDr$findElement(using='id',value='mat-error-2'))) {
+  stop("Incorrect SMS code, please start over...")
+}
 cat("Grabbing page contents...")
 remDr$navigate("https://parler.com/discover")
 Sys.sleep(1)
@@ -101,5 +106,5 @@ packages <- function() {
                                                        character.only=T,
                                                        dependence=T)
   }
-  lapply(packages.used, check.pkg)
+  invisible(lapply(packages.used, check.pkg))
 }
