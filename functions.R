@@ -27,7 +27,7 @@ Sys.sleep(3)
 nextButton <- remDr$findElement(using = "xpath", value = '//*[contains(concat( " ", @class, " " ), concat( " ", "w--100", " " ))]')
 nextButton$clickElement()
 Sys.sleep(3)
-if (!is.null(remDr$findElement(using='id',value='mat-error-0'))) {
+if (length(remDr$findElements(using='id',value='mat-error-0')!=0)) {
   stop("Incorrect credentials, please start over...")
 }
 captcha <- remDr$findElement(using = "id", value = "mat-input-2")
@@ -40,7 +40,7 @@ captcha$sendKeysToElement(list(code))
 clickNext <- remDr$findElement(using = "xpath", value ='//*[(@id = "auth-form--actions")]//*[contains(concat( " ", @class, " " ), concat( " ", "w--100", " " ))]')
 clickNext$clickElement()
 Sys.sleep(2)
-if (!is.null(remDr$findElement(using='id',value='mat-error-1'))) {
+if (length(remDr$findElements(using='id',value='mat-error-1')!=0)) {
   stop("Incorrect CAPTCHA, please start over...")
 }
 
@@ -55,7 +55,7 @@ remDr$sendKeysToActiveElement(list(text[4]))
 remDr$sendKeysToActiveElement(list(text[5]))
 remDr$sendKeysToActiveElement(list(text[6]))
 Sys.sleep(2)
-if (!is.null(remDr$findElement(using='id',value='mat-error-2'))) {
+if (length(remDr$findElements(using='id',value='mat-error-2')!=0)) {
   stop("Incorrect SMS code, please start over...")
 }
 cat("Grabbing page contents...")
