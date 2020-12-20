@@ -1,11 +1,11 @@
-scrape_parler <- function(scrolls=10,user='',password='') {
+scrape_parler <- function(scrolls=10,user='',password='',cache_path='~') {
 user <- Sys.getenv('PARLER_USER')
 pass <- Sys.getenv('PARLER_PASS')
 if (user==''|pass=='') {
   user <- readline(prompt="Enter username (likely email): ") 
   pass <- readline(prompt="Enter password: ") 
-  Sys.setenv(PARLER_USER = user)
-  Sys.setenv(PARLER_PASS = pass)
+  write.table(paste0('PARLER_USER=',user),file=paste0(cache_path,'/.Renviron'),append=TRUE,col.names=FALSE,row.names=FALSE,quote=FALSE)
+  write.table(paste0('PARLER_PASS=',pass),file=paste0(cache_path,'/.Renviron'),append=TRUE,col.names=FALSE,row.names=FALSE,quote=FALSE)
 }
 # SETUP
 
@@ -101,7 +101,8 @@ packages <- function() {
     c(
       "tidyverse",
       "RSelenium",
-      "rvest")
+      "rvest",
+      "usethis")
   )
   check.pkg <- function(x){
     if(!require(x, character.only=T)) install.packages(x, 
