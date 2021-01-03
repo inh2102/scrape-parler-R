@@ -41,7 +41,7 @@ Once the scraping has completed, R will return `df`, which is a list of top post
 
 `get_parler_news.R` adapts the [castlelemongrab/parlance](https://github.com/castlelemongrab/parlance) CLI to R and scrapes the affiliates' newsfeed of articles.
 
-From 'parlance': 
+From `parlance`: 
 
 `Then, log in to Parler using an ordinary web browser. Use your browser's development tools and/or cookie storage interface to find Parler's MST (Master Session Token) and JST (a short-lived session token). Use the init subcommand to create an authorization file using the MST and JST values from your browser. If your browser supplies you with URI-encoded versions of these values, you should decode them prior to use to avoid duplicate HTTPS requests and/or warning messages from the tool. Any automation of the above login process is unlikely to be accepted.`
 
@@ -55,3 +55,5 @@ Steps (Chrome macOS):
 
 3) Find Parler's "Cookies" on the left, and locate the key values for jst and mst.
 <img src="https://i.ibb.co/RNMztVx/3.png" width="400" height="400"/>
+
+Once you have the long `mst` and `jst` cookie string values, feed them into `do_credentials()` and proceed.
