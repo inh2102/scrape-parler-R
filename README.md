@@ -54,8 +54,4 @@ Steps (Chrome macOS):
 <img src="https://i.ibb.co/Mc0mhg6/2.png" width="1000" height="250"/>
 
 3) Find Parler's "Cookies" on the left, and locate the key values for jst and mst.
-<img src="https://i.ibb.co/RNMztVx/3.png" width="250" height="250"/>
-
-
-
-
+<img src="https://i.ibb.co/RNMztVx/3.png" width="400" height="400"/>
