@@ -3,6 +3,8 @@ This repository scrapes parts of the conservative alternative social media netwo
 
 Currently, `scrape_parler.R` allows you to save the "Parleys" section of Parler's "Discover" page.
 
+`scrape_parler_news.R` adapts [castlelemongrab/parlance](https://github.com/castlelemongrab/parlance)'s CLI and scrapes the "Affiliates" newsfeed section.
+
 To clone this repository, use:
 
 `git clone http://github.com/inh2102/scrape_parler`.
