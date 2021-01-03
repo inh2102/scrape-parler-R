@@ -8,16 +8,14 @@ if (user==''|pass=='') {
   write.table(paste0('PARLER_PASS=',pass),file=paste0(cache_path,'/.Renviron'),append=TRUE,col.names=FALSE,row.names=FALSE,quote=FALSE)
 }
 # SETUP
-
 remDr <- remoteDriver(
   remoteServerAddr = "localhost",
   port = 4445L,
   browserName = "firefox"
 )
-remDr$open()
+remDr$open(silent=TRUE)
 cat("Navigating to Parler, please wait...")
 remDr$navigate("http://parler.com/")
-
 # LOGIN
 cat("\nLogging you in...")
 webElem <- remDr$findElement(using = "id", "wc--2--login")
