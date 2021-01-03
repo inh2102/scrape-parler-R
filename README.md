@@ -48,13 +48,14 @@ From 'parlance':
 Steps (Chrome macOS):
 
 1) Right-click your browser while on Parler and "Inspect."
-![](https://i.ibb.co/PGDdZ5Q/1.png)
+<img src="https://i.ibb.co/PGDdZ5Q/1.png" width="250" height="250"/>
 
 2) Select "Application" on the top bar.
-![](https://i.ibb.co/Mc0mhg6/2.png)
+<img src="https://i.ibb.co/Mc0mhg6/2.png" width="250" height="250"/>
 
 3) Find Parler's "Cookies" on the left, and locate the key values for jst and mst.
-![](https://i.ibb.co/RNMztVx/3.png)
+<img src="https://i.ibb.co/RNMztVx/3.png" width="250" height="250"/>
+
 
 
 
