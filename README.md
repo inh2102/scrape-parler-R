@@ -25,7 +25,7 @@ If you'd like to kill all running instances of Docker, use:
 
 `docker stop $(docker ps -q)`.
 
-## Scraping Parler
+## Scraping Parler Posts
 
 Once you have cloned this repository, open the `scrape_parler.R` file (which handles references to the `functions.R` file - the meat of this repo). 
 
@@ -37,6 +37,24 @@ The R console provides periodic status updates on the scraping process -- includ
 
 Once the scraping has completed, R will return `df`, which is a list of top posts and Parler's top trending hashtags.
 
+## Scraping Parler Affiliates' 'News'
+
+`get_parler_news.R` adapts the [castlelemongrab/parlance](https://github.com/castlelemongrab/parlance) CLI to R and scrapes the affiliates' newsfeed of articles.
+
+From 'parlance': 
+
+`Then, log in to Parler using an ordinary web browser. Use your browser's development tools and/or cookie storage interface to find Parler's MST (Master Session Token) and JST (a short-lived session token). Use the init subcommand to create an authorization file using the MST and JST values from your browser. If your browser supplies you with URI-encoded versions of these values, you should decode them prior to use to avoid duplicate HTTPS requests and/or warning messages from the tool. Any automation of the above login process is unlikely to be accepted.`
+
+Steps (Chrome macOS):
+
+1) Right-click your browser while on Parler and "Inspect."
+![](https://i.ibb.co/PGDdZ5Q/1.png)
+
+2) Select "Application" on the top bar.
+![](https://i.ibb.co/Mc0mhg6/2.png)
+
+3) Find Parler's "Cookies" on the left, and locate the key values for jst and mst.
+![](https://i.ibb.co/RNMztVx/3.png)
 
 
 
