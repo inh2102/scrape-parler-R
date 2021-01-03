@@ -25,10 +25,10 @@ get_parler_news()
 
 # Retrieve json data
 # install.packages('jsonlite')
-# install.packages('lubridate') - easy date manipulation
+news <- jsonlite::read_json("~/parlance/news.json",simplifyVector=TRUE)
 
 # Tidy it up...
-news <- jsonlite::read_json("~/parlance/news.json",simplifyVector=TRUE)
+# install.packages('lubridate') - easy date manipulation
 news_meta <- cbind(news$metadata['title'],news$metadata['description']) %>% tibble()
 news <- tibble(news) %>% select(createdAt,domain,long)
 news <- bind_cols(news,news_meta)
